@@ -1,0 +1,24 @@
+<template name="home">
+  {{#contentFor "headerTitle"}}
+    <h1 class="title">Headlines</h1>
+  {{/contentFor}}
+
+  {{#ionView}}
+    {{#ionContent}}
+
+      {{#if Template.subscriptionsReady}}
+        {{#ionSlideBox}}
+          {{#each headlines}}
+            {{#ionSlide class="news-item"}}
+              <img src="{{img}}" alt="{{title}}" />
+              <h3>{{title}}</h3>
+              <p>{{body}}</p>
+            {{/ionSlide}}
+          {{/each}}
+        {{/ionSlideBox}}
+      {{/if}}
+
+    {{/ionContent}}
+  {{/ionView}}
+</template>
+
